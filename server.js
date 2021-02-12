@@ -1,4 +1,3 @@
-// from boardgame.io guide for Deployment to Heroku of Frontend and Backend
 import { Server, FlatFile } from 'boardgame.io/server';
 import { nanoid, customAlphabet } from 'nanoid';
 import path from 'path';
