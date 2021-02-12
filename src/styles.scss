@@ -1,0 +1,109 @@
+body {
+	background: black;
+	color: white;
+}
+.lobby-container {
+	padding: 50px 0;
+	text-align: center;
+	font-size: 25px;
+	width: 100%;
+	label {
+		display: block;
+	}
+	input[type="text"], input[type="number"] {
+		border: 2px solid white;
+		background: black;
+		border-radius: 5px;
+		padding: 0.5em 1em;
+		color: white;
+		font-size: 25px;
+		width: 200px;
+		display: block;
+		margin: 0 auto 1em;
+	}
+}
+button {
+	background: rgba(255, 255, 255, 0.2);
+	border: 2px solid white;
+	border-radius: 5px;
+	padding: 0.5em 1em;
+	font-size: 25px;
+	color: white;
+	cursor: pointer;
+	display: block;
+	margin: 0 auto 0.5em;
+	&:focus {
+		outline: none;
+		box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.5);
+	}
+}
+.lobby-forms {
+	width: 95%;
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+}
+.lobby-form {
+	flex: 1;
+}
+.lobby-players-list {
+	margin-bottom: 1em;
+}
+.lobby-room-info {
+	margin-bottom: 1em;
+}
+
+.game-container {
+	.players {
+		display: flex;
+		justify-content: space-around;
+		margin: 20px;
+	}
+	.player {
+		flex: 1;
+		max-width: 250px;
+		border: 2px solid white;
+		border-radius: 10px;
+		height: 360px;
+		text-align: center;
+		margin: 20px;
+		padding: 20px;
+		&.active {
+			box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.5);
+		}
+		h3 {
+			&.alien {
+				color: #f00;
+			}
+			&.human {
+				color: #00ff44;
+			}
+		}
+	}
+	.player-info {
+		margin-left: 0.5em;
+	}
+	.player-action {
+
+	}
+
+	.message {
+		text-align: center;
+		height: 260px;
+		font-size: 25px;
+		.red {
+			color: #f00;
+		}
+		.green {
+			color: #00ff44;
+		}
+		.white {
+			font-weight: bold;
+		}
+		img {
+			vertical-align: middle;
+			margin: 0 5px;
+			height: 40px;
+		}
+	}
+}
