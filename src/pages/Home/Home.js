@@ -51,6 +51,7 @@ const Home = (props) => {
 	};
 
 	const joinRoom = async (roomID, name) => {
+		roomID = roomID.toUpperCase();
 		try {
 			const players = await api.getPlayers(roomID);
 			const uniqueName =

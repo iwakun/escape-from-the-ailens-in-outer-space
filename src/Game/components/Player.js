@@ -3,8 +3,11 @@ import React from 'react';
 const Player = (props) => {
 	const { G, playerID, ctx, moves, i } = props;
 
-	const drawCard = () => {
-		moves.drawCard();
+	const moveSafe = () => {
+		moves.moveSafe();
+	};
+	const moveDangerous = () => {
+		moves.moveDangerous();
 	};
 	const attackLocation = () => {
 		moves.attackLocation();
@@ -45,8 +48,11 @@ const Player = (props) => {
 				ctx.currentPlayer === playerID
 			) &&
 				<div className="player-actions">
-					<button onClick={drawCard}>
-						Draw Card
+					<button onClick={moveSafe}>
+						Move (safe sector)
+					</button>
+					<button onClick={moveDangerous}>
+						Move (dangerous sector)
 					</button>
 					{ (G.players[playerID].team === 'ALIEN')
 						?

@@ -48,10 +48,13 @@ export const Game = {
 		moveLimit: 1
 	},
 	moves: {
-		drawCard: (G, ctx, id) => {
+		moveSafe: (G, ctx, id) => {
+			G.turnLog.push({ action: 'move-safe', player: ctx.currentPlayer });
+		},
+		moveDangerous: (G, ctx, id) => {
 			let card = G.deck.pop();
 			G.players[ctx.currentPlayer].hand.push(card);
-			G.turnLog.push({ action: 'draw', player: ctx.currentPlayer });
+			G.turnLog.push({ action: 'move-dangerous', player: ctx.currentPlayer });
 		},
 		changeNames: (G, ctx, playerList) => {
 			for (let i = 0; i < playerList.length; i++) {
@@ -73,7 +76,7 @@ export const Game = {
 		first: (G, ctx) => 0,
 		// skip over players who are out
 		next: (G, ctx) => {
-			for (let i = 1; i <= G.numPlayers; i++) {
+			for (let i = 0; i <= G.numPlayers; i++) {
 				const nextIndex = (ctx.playOrderPos + i) % G.numPlayers;
 				const nextPlayer = ctx.playOrder[nextIndex];
 				if (G.players[nextPlayer].status === 1) {
